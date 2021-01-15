@@ -2,6 +2,7 @@
 
 
 class Movie {
+
   public $title;
   public $language;
   public $vote;
@@ -12,15 +13,15 @@ class Movie {
   {
     $this->title = $_title;
 
-    if (is_nan($_language)) {
+    if (!is_numeric($_language)) {
       $this->language = $_language;
     }
 
-    if (!is_nan($_vote)) {
+    if (is_numeric($_vote)) {
       $this->vote = $_vote;
     }
 
-    if (is_nan($_genre)) {
+    if (!is_numeric($_genre)) {
       $this->genre = $_genre;
     }
 
@@ -41,16 +42,28 @@ class Movie {
   public function getGenre() {
     return $this->genre;
   }
+
 }
 
-$star_wars = new Movie('star wars', 'eng', 9,3, 'sci-fi');
+$star_wars = new Movie('Star Wars', 'Eng', 9.3, 'Sci-Fi');
 
 var_dump($star_wars);
 
-echo $star_wars->getTitle() . '<br>';
+echo '<strong>' . $star_wars->getTitle() . '</strong>' . '<br>';
 echo $star_wars->getLanguage() . '<br>';
 echo $star_wars->getVote() . '<br>';
 echo $star_wars->getGenre() . '<br>';
+
+
+$dead_poets_society = new Movie('Dead Poet Society', 'Eng', 8.8, 'Drama');
+
+var_dump($dead_poets_society);
+
+echo '<strong>' . $dead_poets_society->getTitle() . '</strong>' . '<br>' ;
+echo $dead_poets_society->getLanguage() . '<br>';
+echo $dead_poets_society->getVote() . '<br>';
+echo $dead_poets_society->getGenre() . '<br>';
+
 
 
 
