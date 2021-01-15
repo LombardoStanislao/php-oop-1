@@ -47,10 +47,10 @@ $star_wars = new Movie('star wars', 'eng', 9,3, 'sci-fi');
 
 var_dump($star_wars);
 
-echo $star_wars->getTitle();
-echo $star_wars->getLanguage();
-echo $star_wars->getVote();
-echo $star_wars->getGenre();
+echo $star_wars->getTitle() . '<br>';
+echo $star_wars->getLanguage() . '<br>';
+echo $star_wars->getVote() . '<br>';
+echo $star_wars->getGenre() . '<br>';
 
 
 
